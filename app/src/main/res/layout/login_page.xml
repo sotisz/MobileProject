@@ -11,7 +11,7 @@
         android:id="@+id/titleName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Wandaerlust"
+        android:text="Wanderlust"
         android:layout_marginTop="50dp"
         android:padding="72dp"
         android:textSize="20pt"
