@@ -4,39 +4,44 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
     <ImageButton
+        android:id="@+id/btnRemove"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:src="@drawable/markerremove_foreground"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:id="@+id/btnRemove"
+        android:layout_margin="10dp"
         />
+
     <TextView
+        android:id="@+id/tvMarkerName"
+        android:text="마커이름"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="마커이름"
-        android:id="@+id/tvMarkerName"
-        app:layout_constraintLeft_toRightOf="@+id/btnRemove"
-        app:layout_constraintRight_toLeftOf="@+id/btnCheck"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:textSize="30dp"
         />
     <Button
+        android:id="@+id/btnCheck"
+        android:text="출석"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:id="@+id/btnCheck"
-        android:text="출석"
+        android:layout_margin="10dp"
         />
 
     <include
         android:id="@+id/includeMarkerDetail"
         layout="@layout/memory_content"
         app:layout_constraintTop_toBottomOf="@id/btnRemove"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"/>
 
 
 

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E3F9ED"
@@ -11,7 +12,7 @@
         android:id="@+id/btnBack"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:src="@drawable/ic_back"
+        android:src="@drawable/gobeforeicon_foreground"
         android:background="@android:color/transparent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,23 +25,30 @@
         android:text="모아서 보기"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@id/btnBack"
-        app:layout_constraintTop_toTopOf="@id/btnBack"
         app:layout_constraintBottom_toBottomOf="@id/btnBack"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btnBack" />
 
-    <!-- 날짜 및 시간 -->
-    <TextView
-        android:id="@+id/tvDateTime"
+    <Button
+        android:id="@+id/btnStartCalender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Jun 10, 2024    9:41 AM"
-        android:background="@drawable/bg_rounded"
-        android:padding="8dp"
-        android:textSize="14sp"
-        app:layout_constraintTop_toBottomOf="@id/btnBack"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:text="2025-05-06"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintRight_toLeftOf="@id/btnEndCalender"/>
+
+    <Button
+        android:id="@+id/btnEndCalender"
+        android:text="2025-06-05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintLeft_toRightOf="@+id/btnStartCalender"
+        app:layout_constraintRight_toLeftOf="@id/btnSearch"
+        />
 
     <!-- 검색 버튼 -->
     <Button
@@ -48,18 +56,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="검색"
-        app:layout_constraintStart_toEndOf="@id/tvDateTime"
-        app:layout_constraintBaseline_toBaselineOf="@id/tvDateTime" />
-
-    <!-- 카테고리 스피너 -->
-    <Spinner
-        android:id="@+id/spinnerCategory"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tvDateTime"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp" />
+        app:layout_constraintLeft_toRightOf="@id/btnEndCalender"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
 
     <!-- 정렬 버튼 -->
     <RadioGroup
@@ -67,14 +66,23 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/spinnerCategory"
+        app:layout_constraintTop_toBottomOf="@id/btnEndCalender"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="8dp"
         android:gravity="center">
 
-        <RadioButton android:id="@+id/rbRecent" android:text="최근 등록 순" />
-        <RadioButton android:id="@+id/rbOldest" android:text="가장 오래된 순" />
+        <RadioButton
+            android:id="@+id/rbRecent"
+            android:text="최근 등록 순"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <RadioButton
+            android:id="@+id/rbOldest"
+            android:text="가장 오래된 순"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
     </RadioGroup>
 
     <!-- 리스트 뷰 -->
