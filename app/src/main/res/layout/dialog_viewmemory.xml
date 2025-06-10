@@ -5,6 +5,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
+    <LinearLayout
+        android:id="@+id/container2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="10dp">
+
     <ImageButton
         android:id="@+id/btnRemove"
         android:layout_width="60dp"
@@ -12,7 +21,6 @@
         android:src="@drawable/markerremove_foreground"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_margin="10dp"
         />
 
     <TextView
@@ -24,6 +32,8 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:textSize="30dp"
+        android:layout_weight="1"
+        android:gravity="center"
         />
     <Button
         android:id="@+id/btnCheck"
@@ -32,13 +42,12 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_margin="10dp"
         />
-
+    </LinearLayout>
     <include
         android:id="@+id/includeMarkerDetail"
-        layout="@layout/memory_content"
-        app:layout_constraintTop_toBottomOf="@id/btnRemove"
+        layout="@layout/content_memory"
+        app:layout_constraintTop_toBottomOf="@id/container2"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_width="0dp"
         android:layout_height="wrap_content"/>

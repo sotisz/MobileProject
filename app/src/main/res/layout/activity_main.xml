@@ -92,10 +92,10 @@
             android:src="@drawable/calendaricon_foreground"/>
 
         <ImageButton
+            android:id="@+id/btnChecklist"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="3dp"
-            android:id="@+id/btnChecklist"
             android:background="#00000000"
             android:src="@drawable/checklisticon_foreground"/>
 
